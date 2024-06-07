@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #eee;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+.customModal {
+  background-color: #eee;
+  border-radius: 15px;
+}
+
+/* Max hex code: #ffdd00 */
