@@ -54,7 +54,7 @@ const StudentView = () => {
           name: `Book ${selectedResource}`,
           date: 'Monday',
           resources: [`Book ${selectedResource}`],
-          students,
+          students: [selectedStudent],
         }),
         headers: {
           'Content-Type': 'application/json',
