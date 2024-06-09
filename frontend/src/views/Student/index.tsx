@@ -128,7 +128,7 @@ const StudentView = () => {
               <span className="font-medium">Class:</span>{' '}
               {selectedStudent?.grade}
             </p>
-            <p>
+            <p data-testid={selectedStudent?.assignment}>
               <span className="font-medium">Assignment:</span>{' '}
               {selectedStudent?.assignment || 'None'}
             </p>
@@ -143,8 +143,9 @@ const StudentView = () => {
         showCloseIcon={false}
       >
         <div className="w-[30rem] min-h-[30rem] mt-10">
-          {resources?.map(r => (
+          {resources?.map((r, i) => (
             <div
+              data-testid={`student-book-[${i + 1}]`}
               key={r.id}
               className="bg-white shadow-md mb-5 p-5 rounded-lg cursor-pointer"
               onClick={() => {

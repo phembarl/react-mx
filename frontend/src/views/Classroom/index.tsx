@@ -101,8 +101,9 @@ const Classroom = () => {
         showCloseIcon={false}
       >
         <div className="w-[30rem] min-h-[30rem] mt-10">
-          {resources?.map(r => (
+          {resources?.map((r, i) => (
             <div
+              data-testid={`book-[${i + 1}]`}
               key={r.id}
               className="bg-white shadow-md mb-5 p-5 rounded-lg cursor-pointer"
               onClick={() => {

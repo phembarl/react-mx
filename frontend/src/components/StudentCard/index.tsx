@@ -14,6 +14,7 @@ const StudentCard = ({ id, name, email, grade }: StudentCardProps) => {
     <Link to={`/student/${id}`}>
       <div
         className={`${styles.studentCard} shadow-md rounded-lg flex justify-center items-center text-sm`}
+        data-testid="student-card"
       >
         <div className="text-center">
           <div className="flex justify-center mb-3">
