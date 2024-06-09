@@ -1,8 +1,12 @@
 .homepage {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 4rem;
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rem;
+  }
 
   button {
     background-color: #ffdd00;

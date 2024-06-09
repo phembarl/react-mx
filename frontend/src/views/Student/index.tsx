@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react';
 import styles from './styles.module.scss';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Student, useStudentsData } from '../../contexts/studentsContext';
 import { Modal } from 'react-responsive-modal';
 
@@ -70,7 +70,6 @@ const StudentView = () => {
           if (s.id === id) return studentUpdate;
           return s;
         });
-        console.log('newStudentSet: ', newStudentSet);
         dispatch(setStudentsAction(newStudentSet));
         onCloseModal();
       }
@@ -85,12 +84,22 @@ const StudentView = () => {
   }, [students]);
 
   useEffect(() => {
-    fetchStudents();
-    fetchResources();
+    if (!students.length) {
+      fetchStudents();
+    }
+    if (!resources.length) {
+      fetchResources();
+    }
   }, []);
 
   return (
     <div className={styles.studentView}>
+      <Link to="/classroom">
+        <button className="bg-[#ffdd00] px-4 py-3 mb-5 rounded-lg inline-flex items-center">
+          <Icon icon="eva:arrow-back-outline" width="24" height="24" />
+          <span className="ml-3">Back</span>
+        </button>
+      </Link>
       <div className="bg-white p-5 rounded-lg">
         <div className="text-right">
           <button

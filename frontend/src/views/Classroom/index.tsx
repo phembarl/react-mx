@@ -69,8 +69,12 @@ const Classroom = () => {
   };
 
   useEffect(() => {
-    fetchStudents();
-    fetchResources();
+    if (!students.length) {
+      fetchStudents();
+    }
+    if (!resources.length) {
+      fetchResources();
+    }
   }, []);
 
   return (
