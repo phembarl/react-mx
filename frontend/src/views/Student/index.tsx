@@ -147,7 +147,9 @@ const StudentView = () => {
             <div
               data-testid={`student-book-[${i + 1}]`}
               key={r.id}
-              className="bg-white shadow-md mb-5 p-5 rounded-lg cursor-pointer"
+              className={`${
+                selectedResource === r.id ? 'bg-[#ffdd00]' : 'bg-white'
+              } shadow-md mb-5 p-5 rounded-lg cursor-pointer`}
               onClick={() => {
                 if (selectedResource === r.id) {
                   setSelectedResource('');
@@ -157,17 +159,19 @@ const StudentView = () => {
               }}
             >
               <p>Book {r.id}</p>
-
-              {selectedResource === r.id && (
-                <button
-                  className="bg-[#ffdd00] px-4 py-2 rounded-lg mt-5"
-                  onClick={handleAssign}
-                >
-                  Assign
-                </button>
-              )}
             </div>
           ))}
+
+          {!!selectedResource && (
+            <div className="text-right mt-36">
+              <button
+                className="bg-[#ffdd00] px-4 py-2 rounded-lg mt-5"
+                onClick={handleAssign}
+              >
+                Assign
+              </button>
+            </div>
+          )}
         </div>
       </Modal>
     </div>
