@@ -106,7 +106,7 @@ const StudentView = () => {
             className="bg-[#ffdd00] px-4 py-3"
             onClick={() => setOpen(true)}
           >
-            Assign Homework
+            Assign Book
           </button>
         </div>
 

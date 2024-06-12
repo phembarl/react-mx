@@ -62,7 +62,7 @@ describe('<App /> Assignment', () => {
     const students = await screen.findAllByTestId('student-card');
 
     fireEvent.click(students[0]);
-    fireEvent.click(screen.getByText('Assign Homework'));
+    fireEvent.click(screen.getByText('Assign Book'));
 
     const resource = await screen.findByTestId('student-book-[2]');
 
